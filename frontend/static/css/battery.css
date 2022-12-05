@@ -1,0 +1,72 @@
+.batteryCss {
+  
+    border: 2px solid lightskyblue;
+    width: 18px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 4px;
+    position: relative;
+    margin: 15px 0;
+  }
+  .batteryCss:before {
+    content: '';
+    margin-left: -1px;
+    height: 3px;
+    width: 10px;
+    background: lightskyblue;
+    display: block;
+    position: absolute;
+    top: -6px;
+    border-radius: 4px 4px 0 0;
+  }
+  .batteryCss:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    right: 0px;
+    bottom: -1px;
+    border:1px solid #fff;
+    border-radius: 2px;
+  }
+  .batteryCss-level {
+    background: #6796b3;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+  }
+
+  .batteryCss-light {
+    background-image: url('/media/light.png');
+    background-repeat: no-repeat;
+    background-size: 23px;
+    height: 18px;
+    width: 18px;
+    margin: -2px 0 0 -11px;
+    content: '';
+    display: inline-block;
+    position: absolute;
+  }
+  .batteryCss-disc {
+    background-image: url('/media/easy.gif');
+    background-repeat: no-repeat;
+    background-size: 17px;
+    height: 25px;
+    width: 18px;
+    margin: -6px 0 0 -8px;
+    content: '';
+    display: inline-block;
+    position: absolute;
+  } 
+  .blink {
+    animation: blinker 0.9s linear infinite;
+    color: #d0d066;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    }
+    @keyframes blinker {  
+    50% { opacity: 0; }
+    }

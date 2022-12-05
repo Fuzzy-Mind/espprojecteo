@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+
+  body {
+    text-align: center;
+    --accent-color: rgb(13 110 253 / 67%);
+    --background-color: white;
+    --text-color: black;
+    --button-text-color: var(--background-color);
+    --transition-delay: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    transition: var(--transition-delay);
+    color: var(--text-color);
+  }
+
+  body.dark {
+    --accent-color: #d0d066;
+    background-color: #333;
+    color: white;
+    
+
+  }
+  .title {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 0.5rem;
+    margin-left: 15px;
+  }
+  .theme-toggle-button {
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    transition: var(--transition-delay);
+    transform: scale(1);
+  }
+
+  .theme-toggle-button .icon {
+    margin-right: 0.5em;
+  }
+
+  .theme-toggle-button:hover,
+  .theme-toggle-button:focus {
+    transform: scale(1.1);
+  }
+
+  .sun-moon-container {
+    --rotation: 0;
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 200vmin;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: transform var(--transition-delay);
+  }
+
+  .sun,
+  .moon {
+    position: absolute;
+    transition: opacity, fill, var(--transition-delay);
+    width: 30px;
+    height: 30px;
+    fill: var(--accent-color);
+  }
+
+  .sun {
+    top: 5%;
+    opacity: 1;
+  }
+
+  .dark .sun {
+    opacity: 0;
+  }
+
+  .moon {
+    bottom: 5%;
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+
+  .dark .moon {
+    opacity: 1;
+  }
+
+  .button {
+    outline: 0;
+    border-radius: 2rem;
+    position: relative;
+    display: inline-block;
+
+    font-size: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid skyblue;
+    background: skyblue;
+    color: #fff;
+    font-weight: 500;
+    transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: #4b00ff;
+    color: #fff;
+    box-shadow: 0 0 5px #4b00ff, 0 0 20px rgb(75 0 255 / 0.8),
+      0 0 35px rgb(75 0 255 / 0.7), 0 0 50px rgb(75 0 255 / 0.6);
+    border-color: #fff;
+  }
+
+  .barContainer {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    margin: 178px auto;
+    text-align: center;
+    margin-right: auto;
+    margin-bottom: 280px;
+  }
+  .barContainer::before {
+    content: "";
+    display: inline-flex;
+    height: 100%;
+  }
+
+  .barContainer::after {
+    display: inline-flex;
+    color: skyblue;
+    font: 30px/40px sans-serif;
+  }
+
+  .bar1 {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    background: skyblue;
+
+    --borderWidth: 3px;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .bar1::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  .bar2 {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    background: skyblue;
+
+    --borderWidth: 3px;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .bar2::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  .bar3 {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    background: skyblue;
+
+    --borderWidth: 3px;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .bar2::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  .bar3::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+  .bar4 {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    background: skyblue;
+
+    --borderWidth: 3px;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .bar4::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+  .bar5 {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+    background: skyblue;
+
+    --borderWidth: 3px;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .bar5::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+  #box1 {
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 2.5rem;
+  }
+  #box2 {
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 2.5rem;
+  }
+  #box3 {
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 2.5rem;
+  }
+  #box4 {
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 2.5rem;
+  }
+  #box5 {
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 2.5rem;
+  }
+ 
+  
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+
+
+
