@@ -1,3 +1,7 @@
+/*
+* Update timeout as 20 sec
+*/
+
 var lastStatus;
 var status;
 var lastLevel;
@@ -15,7 +19,6 @@ function onload() {
         type: 'GET',
         url: "https://espprojecteo.herokuapp.com/api/esp/list",
         //url: "http://127.0.0.1:8000/api/esp/list",
-        // test deploy
         success: function (response) {
             debugger;
             if (response[0].start == 0) {
@@ -96,7 +99,7 @@ $(document).ready(function () {
                 }
                 else {
                     counter++;
-                    if (counter > 9) {
+                    if (counter > 19) {
                         document.getElementById("StartButton").disabled = true;
                         document.getElementById("UpButton").disabled = true;
                         document.getElementById("DownButton").disabled = true;
